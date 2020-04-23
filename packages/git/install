@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# set up Git
+
+git config --global core.excludesfile $(readlink -f .gitignore)
+name=$(git config --global user.name)
+email=$(git config --global user.email)
+editor=$(git config --global core.editor)
+
+if [[ -z "$name" ]]; then
+    echo "Enter your name for Git::"
+    read name
+    git config --global user.name "$name"
+fi
+
+if [[ -z "$email" ]]; then
+    echo "Enter your email for Git::"
+    read email
+    git config --global user.email "$email"
+fi
+
+if [[ -z "$editor" ]]; then
+    echo "Enter your editor for Git::"
+    read editor
+    git config --global core.editor "$editor"
+fi
