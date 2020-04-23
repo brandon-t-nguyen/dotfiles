@@ -1,0 +1,35 @@
+#!/bin/bash
+
+target="$HOME"
+exec_name=$0
+
+declare -a packages
+for arg in $@; do
+    if [[ "$arg" == '-h' ]] || [[ "$arg" == '--help' ]]; then
+        # help printout
+        echo "usage: $(basename $exec_name) [-h|--help] [--dest=install directory; default: $HOME] [packages; default: all]"
+        exit 0
+    elif [[ "${arg:0:7}" == "--dest=" ]]; then
+        # set install directory
+        target="${arg:7}"
+    else
+        packages+=("$arg")
+    fi
+done
+
+# if packages empty, add all of them
+if [[ ${#packages[@]} -eq 0 ]]; then
+    for p in packages/*; do
+        packages+=("${p##*/}")
+    done
+fi
+
+target=$(readlink -f "$target")
+stow="stow -v --no-folding --target=$target"
+
+# stow each of them
+cd packages
+for p in ${packages[@]}; do
+    $stow "$p"
+done
+cd ..
