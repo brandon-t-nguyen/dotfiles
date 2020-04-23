@@ -19,8 +19,6 @@ alias ls='ls --color=auto'
 
 # Paths
 #export PATH="/path/to/thing:$PATH"
-export PATH="$HOME/scripts:$PATH"
-export PATH="$HOME/github/scripts:$PATH"
 
 # Syntax highlighting
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
