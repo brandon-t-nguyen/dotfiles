@@ -1,14 +1,18 @@
 XTerm.vt100.reverseVideo: true
 
-URxvt.foreground: grey
-URxvt.background: black
+! URXvt general
 URxvt.scrollBar: false
-URxvt.font: xft:hack:size=9
-!URxvt.font: xft:dejavusansmono:size=9
-
 URxvt.perl-ext-common: default,matcher,selection-to-clipboard
 
 URxvt.url-launcher: /usr/bin/xdg-open
 URxvt.matcher.button: 1
+
+! URxvt font
+URxvt.font: xft:hack:size=9
+!URxvt.font: xft:dejavusansmono:size=9
+
+! URxvt colors
+URxvt.foreground: grey
+URxvt.background: black
 
 !local configuration
