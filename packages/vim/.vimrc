@@ -26,9 +26,10 @@ set expandtab
 "but makefiles need tab
 autocmd FileType mk,make set noexpandtab
 
-"flag trailing whitespace 
-autocmd Filetype c,cpp,h,java,verilog,systemverilog,make,python,markdown match Error /\s\+$/
-"...and clean it automagically on write
+"flag trailing whitespace for all files
+match Error /\s\+$/
+
+"...and clean it automagically on write (for some filetypes)
 autocmd FileType c,cpp,h,java,verilog,systemverilog autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
 
 "set alt tab width for certain filetypes
