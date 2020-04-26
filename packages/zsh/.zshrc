@@ -3,13 +3,16 @@ HISTSIZE=1000
 SAVEHIST=1000
 bindkey -v
 
+# add personal function path
+fpath=($HOME/.zsh $fpath)
+
 zstyle :compinstall filename '$HOME/.zshrc'
 
 autoload -Uz compinit promptinit
 compinit
 promptinit
 
-prompt elite2 cyan
+prompt brng cvs signal
 
 # ls colors
 alias ls='ls --color=auto'
