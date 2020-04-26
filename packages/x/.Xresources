@@ -19,19 +19,19 @@ URxvt.background: #080808
 ! black
 URxvt.color0: #080808
 ! red
-URxvt.color1: #cc0000
+URxvt.color1: #ac0000
 ! green
-URxvt.color2: #00cc00
+URxvt.color2: #00ac00
 ! yellow
-URxvt.color3: #cccc00
+URxvt.color3: #acac00
 ! blue
-URxvt.color4: #0000cc
+URxvt.color4: #0000ac
 ! magenta
-URxvt.color5: #cc00cc
+URxvt.color5: #ac00ac
 ! cyan
-URxvt.color6: #00cccc
+URxvt.color6: #00acac
 ! white
-URxvt.color7: #cccccc
+URxvt.color7: #acacac
 
 ! bright
 ! black
