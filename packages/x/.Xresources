@@ -12,7 +12,43 @@ URxvt.font: xft:hack:size=9
 !URxvt.font: xft:dejavusansmono:size=9
 
 ! URxvt colors
-URxvt.foreground: grey
-URxvt.background: black
+URxvt.foreground: #cccccc
+URxvt.background: #080808
+
+! normal
+! black
+URxvt.color0: #080808
+! red
+URxvt.color1: #cc0000
+! green
+URxvt.color2: #00cc00
+! yellow
+URxvt.color3: #cccc00
+! blue
+URxvt.color4: #0000cc
+! magenta
+URxvt.color5: #cc00cc
+! cyan
+URxvt.color6: #00cccc
+! white
+URxvt.color7: #cccccc
+
+! bright
+! black
+URxvt.color8: #121212
+! red
+URxvt.color9: #ff0000
+! green
+URxvt.color10: #00ff00
+! yellow
+URxvt.color11: #ffff00
+! blue
+URxvt.color12: #0000ff
+! magenta
+URxvt.color13: #ff00ff
+! cyan
+URxvt.color14: #00ffff
+! white
+URxvt.color15: #ffffff
 
 !local configuration
