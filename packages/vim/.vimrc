@@ -27,7 +27,7 @@ set expandtab
 autocmd FileType mk,make set noexpandtab
 
 "flag trailing whitespace 
-au BufRead *.c,*.cpp,*.h,*.java,*.mk,*.v,*.vh,*.sv,*.py match Error /\s\+$/
+autocmd Filetype c,cpp,h,java,verilog,systemverilog,make,python,markdown match Error /\s\+$/
 "...and clean it automagically on write
 autocmd FileType c,cpp,h,java,verilog,systemverilog autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
 
