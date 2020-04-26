@@ -15,7 +15,9 @@ autoload -U promptinit
 promptinit
 prompt elite2 cyan
 
+# ls colors
 alias ls='ls --color=auto'
+eval $(dircolors $HOME/.dircolors)
 
 # Paths
 #export PATH="/path/to/thing:$PATH"
