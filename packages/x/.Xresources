@@ -12,8 +12,8 @@ URxvt.font: xft:hack:size=9
 !URxvt.font: xft:dejavusansmono:size=9
 
 ! URxvt colors
-URxvt.foreground: #cccccc
-URxvt.background: #080808
+URxvt.foreground: 7 ! white
+URxvt.background: 0 ! black
 
 ! normal
 ! black
