@@ -17,11 +17,14 @@ prompt_brng_setup ()
 
 git_prompt ()
 {
-    if [[ $prompt_brng_cvs -eq 1 ]] && command -v git > /dev/null && $(git status --short > /dev/null 2> /dev/null); then
+    if [[ $prompt_brng_cvs -eq 1 ]]; then
         local prompt="("
 
         # status checking
-        local git_status=$(git status --branch --short --porcelain=2)
+        local git_status=$(git status --branch --short --porcelain=2 2> /dev/null)
+        if [[ -z "$git_status" ]]; then
+            return
+        fi
 
         # branch check
         local branch=$(echo "$git_status" | grep 'branch.head' | sed 's/# branch.head\s*\(.*\)/\1/')
