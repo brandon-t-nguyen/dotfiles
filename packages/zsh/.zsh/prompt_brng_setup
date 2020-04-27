@@ -80,7 +80,12 @@ prompt_brng_precmd ()
     code=$?
 
     user="$USER"
-    host="%F{cyan}$HOST%f"
+
+    if [[ -z "$SSH_CLIENT" ]]; then
+        host="%F{cyan}$HOST%f"
+    else
+        host="%F{green}$HOST%f"
+    fi
 
     # add trailing / to cwd
     cwd="$(dirs)"
