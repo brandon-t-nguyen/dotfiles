@@ -24,10 +24,10 @@ git_prompt ()
         local git_status=$(git status --branch --short --porcelain=2)
 
         # branch check
-        # local branch=$(echo "$git_status" | grep 'branch.head' | sed 's/# branch.head\s*\(.*\)/\1/')
-        #i f [[ "$branch" == '(detached)' ]]; then
-        local branch=$(git branch --show-current)
-        if [[ -z "$branch" ]]; then
+        local branch=$(echo "$git_status" | grep 'branch.head' | sed 's/# branch.head\s*\(.*\)/\1/')
+        if [[ "$branch" == '(detached)' ]]; then
+        # local branch=$(git branch --show-current)
+        # if [[ -z "$branch" ]]; then
             prompt+="%F{red}$(git rev-parse --short HEAD)%f"
         else
             prompt+="%F{green}$branch%f"
