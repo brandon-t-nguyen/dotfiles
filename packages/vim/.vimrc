@@ -14,7 +14,10 @@ set clipboard=unnamedplus
 set ls=2
 
 "show marker at column 81
-autocmd FileType c,cpp,h set colorcolumn=81
+"autocmd FileType c,cpp,h set colorcolumn=81,121
+set colorcolumn=81,121
+
+autocmd FileType gitcommit set colorcolumn=51,73
 
 "four space tabs 
 set tabstop=4
@@ -36,3 +39,4 @@ autocmd FileType c,cpp,h,java,verilog,systemverilog autocmd BufWritePre <buffer>
 autocmd FileType markdown,yaml,tex set tabstop=2 | set shiftwidth=2
 
 "Local configuration
+source $HOME/.local.vimrc
