@@ -24,8 +24,8 @@ if [[ ${#packages[@]} -eq 0 ]]; then
     done
 fi
 
-target=$(readlink -f "$target")
-stow="stow -v --no-folding --target=$target --ignore=install"
+export target=$(readlink -f "$target")
+export stow="stow -v --no-folding --target=$target --ignore=install"
 
 # stow each of them, or run their install script
 cd packages

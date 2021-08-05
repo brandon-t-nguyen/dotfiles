@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# stow our files and create a new local zsh config file
+$stow files
+touch $target/.local.vimrc
