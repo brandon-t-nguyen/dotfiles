@@ -18,10 +18,9 @@ prompt brng cvs signal
 alias ls='ls --color=auto'
 eval $(dircolors $HOME/.dircolors)
 
-# Paths
-#export PATH="/path/to/thing:$PATH"
-
 # Syntax highlighting
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-# Local configuration
+if [ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
+    source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+elif [ -f $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
+    source $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
