@@ -8,8 +8,7 @@ URxvt.url-launcher: /usr/bin/xdg-open
 URxvt.matcher.button: 1
 
 ! URxvt font
-URxvt.font: xft:hack:size=9
-!URxvt.font: xft:dejavusansmono:size=9
+URxvt.font: xft:Hack:size=9, xft:NotoSansMono:size=9, xft:LiberationMono:size=9
 
 ! URxvt colors
 URxvt.foreground: 7 ! white
