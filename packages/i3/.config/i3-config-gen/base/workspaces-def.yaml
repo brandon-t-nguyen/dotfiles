@@ -1,0 +1,76 @@
+modes:
+  - name: dev
+    desc: "development"
+    bindsym: d
+    numbered: 10
+    monitor: 1
+  - name: doc
+    desc: "documentation reading"
+    bindsym: Shift+d
+    numbered: 10
+    monitor: 2
+  - name: www
+    desc: "web browsers"
+    bindsym: w
+    numbered: 10
+  - name: com
+    desc: "communication"
+    bindsym: c
+    workspaces:
+      - name: email
+        bindsym: e
+        monitor: 2
+      - name: discord
+        bindsym: d
+        monitor: 2
+        assigns:
+          - class: "^discord$"
+      - name: slack
+        bindsym: s
+        monitor: 2
+        assigns:
+          - class: "^Slack$"
+  - name: ent
+    desc: "entertainment"
+    bindsym: e
+    workspaces:
+      - name: "1:ent"
+        bindsym: 1
+        monitor: 1
+      - name: "2:ent"
+        bindsym: 2
+        monitor: 2
+      - name: "music"
+        bindsym: m
+        monitor: 2
+        assigns:
+          - class: "^Spotify$"
+      - name: "steam"
+        bindsym: s
+        monitor: 2
+        assigns:
+          - class: "^Steam$"
+      - name: "gaming"
+        bindsym: g
+        monitor: 1
+  - name: misc
+    desc: "miscellaneous"
+    bindsym: m
+    workspaces:
+      - name: "htop"
+        bindsym: h
+        monitor: 2
+        assigns:
+          - class: "^URxvt$"
+            title: "htop"
+favorites:
+  1: "1:dev"
+  2: "2:dev"
+  3: "3:dev"
+  4: "1:doc"
+  5: "2:doc"
+  6: "3:doc"
+  7: "1:www"
+  8: "email"
+  9: "slack"
+  10: "discord"
