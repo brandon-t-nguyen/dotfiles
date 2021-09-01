@@ -61,7 +61,7 @@ modes:
         bindsym: h
         monitor: 2
         assigns:
-          - class: "^URxvt$"
+          - class: "^Alacritty$"
             title: "htop"
 favorites:
   1: "1:dev"
