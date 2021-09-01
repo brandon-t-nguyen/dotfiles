@@ -10,15 +10,15 @@ load {
 }
 
 cpu_usage {
-   format = "CPU: %usage"
+   format = "💻 %usage"
 }
 
 memory {
-    format = "RAM: %used / %total (%percentage_used)"
+    format = "🐏 %used / %total (%percentage_used)"
 }
 
 disk "/" {
-    format = "Disk: %free/%total (%percentage_free)"
+    format = "💾 %free/%total (%percentage_free)"
 }
 
 wireless _first_ {
