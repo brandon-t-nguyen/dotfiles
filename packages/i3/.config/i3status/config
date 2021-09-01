@@ -22,14 +22,12 @@ disk "/" {
 }
 
 wireless _first_ {
-    format_up = "W (%quality at %essid) %ip"
-    #format_down = "W: down"
+    format_up = "📡 %essid"
     format_down = ""
 }
 
 ethernet _first_ {
-    format_up = "E: %ip (%speed)"
-    #format_down = "E: down"
+    format_up = "🔗 %ip (%speed)"
     format_down = ""
 }
 
@@ -54,10 +52,8 @@ tztime localtime {
 }
 
 volume master {
-    format = "♪: %volume"
-    format_muted = "M: %volume"
-    #format = "🔈: %volume"
-    #format_muted = "🔇: %volume"
+    format = "🔈: %volume"
+    format_muted = "🔇: %volume"
 
     device = "pulse"
 }
