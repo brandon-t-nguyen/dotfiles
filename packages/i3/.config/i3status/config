@@ -33,6 +33,18 @@ ethernet _first_ {
     format_down = ""
 }
 
+battery all {
+    format = "%status %percentage"
+    format_down = ""
+    integer_battery_capacity = true
+    low_threshold = 30
+    threshold_type = percentage
+    status_full = "🔌"
+    status_chr = "⚡"
+    status_bat = "🔋"
+    status_unk = "🤔"
+}
+
 tztime localdate {
     format = "%Y-%m-%d"
 }
@@ -55,6 +67,7 @@ order += "memory"
 order += "disk /"
 order += "wireless _first_"
 order += "ethernet _first_"
+order += "battery all"
 order += "volume master"
 order += "tztime localdate"
 order += "tztime localtime"
