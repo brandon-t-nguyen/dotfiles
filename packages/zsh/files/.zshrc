@@ -24,3 +24,6 @@ if [ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.z
 elif [ -f $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
     source $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
+
+# local, non-version controlled configuration
+source "$HOME/.local.zshrc"
