@@ -22,7 +22,7 @@ disk "/" {
 }
 
 wireless _first_ {
-    format_up = "📡 %essid"
+    format_up = "📡 %essid (%quality @ %bitrate)"
     format_down = ""
 }
 
