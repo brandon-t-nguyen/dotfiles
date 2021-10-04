@@ -30,6 +30,10 @@ modes:
         monitor: 2
         assigns:
           - class: "^Slack$"
+      - name: zoom
+        bindsym: z
+        assigns:
+          - class: "^Zoom$"
   - name: ent
     desc: "entertainment"
     bindsym: e
