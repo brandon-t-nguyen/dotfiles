@@ -13,6 +13,9 @@ set clipboard=unnamedplus
 "show status line w/ file number
 set ls=2
 
+"show commands being entered
+set showcmd
+
 "show marker at column 81
 "autocmd FileType c,cpp,h set colorcolumn=81,121
 set colorcolumn=81,121
