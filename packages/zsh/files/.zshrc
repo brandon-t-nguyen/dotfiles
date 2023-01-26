@@ -25,5 +25,15 @@ elif [ -f $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
     source $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
 
+# total time
+function ttime() {
+    s="$(date)"
+    time $@
+    e="$(date)"
+    echo "$s -> $e"
+}
+
+# open as xdg-open
+
 # local, non-version controlled configuration
 source "$HOME/.local.zshrc"
