@@ -67,6 +67,12 @@ modes:
         assigns:
           - class: "^Alacritty$"
             title: "htop"
+      - name: "obs"
+        bindsym: o
+        monitor: 2
+        assigns:
+          - class: "OBS"
+            title: "OBS"
 favorites:
   1: "1:dev"
   2: "2:dev"
