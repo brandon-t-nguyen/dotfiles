@@ -33,7 +33,25 @@ function ttime() {
     echo "$s -> $e"
 }
 
+
+# aliases and default applications
+# kudos to https://www.topbug.net/blog/2016/10/11/speed-test-check-the-existence-of-a-command-in-bash-and-zsh/ for pointing out experimentally determining what's faster
+# for fast command existence detection in zsh
+
 # open as xdg-open
+if (( $+commands[xdg-open] )); then
+    alias open=xdg-open
+fi
+
+# if nvim available, alias vim to it
+if (( $+commands[nvim] )); then
+    export EDITOR=nvim
+elif (( $+commands[vim] )); then
+    export EDITOR=vim
+fi
+
+# e as default editor
+alias e=$EDITOR
 
 # local, non-version controlled configuration
 source "$HOME/.local.zshrc"
