@@ -43,6 +43,7 @@ endfunction
 " For *certain* filetypes, automatically get rid of trailing whitespace
 autocmd FileType c,cpp,h,java,verilog,systemverilog autocmd BufWritePre * call StripTrailingWhitespace()
 
+" === Local ===
 " Local configuration
 if filereadable(expand("~/.config/nvim/init.local.vim"))
     source ~/.config/nvim/init.local.vim
