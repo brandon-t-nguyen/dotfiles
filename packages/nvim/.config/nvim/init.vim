@@ -28,11 +28,18 @@ autocmd FileType mk,make set noexpandtab
 " Alternate tab widths
 autocmd FileType markdown,yaml,tex set tabstop=2 | set shiftwidth=2
 
-" === Trailing whitespace detection ===
+" === Trailing whitespace ===
 " Flag trailing whitespace for all files
-match Error /\s\+$/
+highlight TrailingWhitespace ctermbg=red guibg=red
+match TrailingWhitespace /\s\+$/
+
+" Function to delete trailing whitespace
+function StripTrailingWhitespace()
+    %s/\s\+$//e
+endfunction
+
 " For *certain* filetypes, automatically get rid of trailing whitespace
-autocmd FileType c,cpp,h,java,verilog,systemverilog autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"), 'substitute(v:val,"\\s\\+$","","")'))
+autocmd FileType c,cpp,h,java,verilog,systemverilog autocmd BufWritePre * call StripTrailingWhitespace()
 
 " Local configuration
 if filereadable(expand("~/.config/nvim/init.local.vim"))
