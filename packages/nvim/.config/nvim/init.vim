@@ -18,9 +18,13 @@ set colorcolumn=81,121
 autocmd FileType gitcommit set colorcolumn=51,73
 
 " === Tabs ===
-" 4-space tabs
-set tabstop=4
-set shiftwidth=4
+function SetTabWidth(width)
+    let &tabstop = a:width
+    let &shiftwidth = a:width
+endfunction
+
+" 4-space tabs as default
+call SetTabWidth(4)
 
 " Insert spaces for tab
 set expandtab
@@ -28,7 +32,7 @@ set expandtab
 autocmd FileType mk,make set noexpandtab
 
 " Alternate tab widths
-autocmd FileType markdown,yaml,tex set tabstop=2 | set shiftwidth=2
+autocmd FileType markdown,yaml,tex call SetTabWidth(2)
 
 " === Trailing whitespace ===
 " Flag trailing whitespace for all files
