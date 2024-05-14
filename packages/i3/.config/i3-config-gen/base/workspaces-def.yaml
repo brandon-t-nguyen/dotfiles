@@ -9,6 +9,11 @@ modes:
     bindsym: Shift+d
     numbered: 10
     monitor: 2
+  - name: read
+    desc: "reading"
+    bindsym: r
+    numbered: 10
+    monitor: 3
   - name: www
     desc: "web browsers"
     bindsym: w
@@ -22,12 +27,12 @@ modes:
         monitor: 2
       - name: discord
         bindsym: d
-        monitor: 2
+        monitor: 3
         assigns:
           - class: "^discord$"
       - name: slack
         bindsym: s
-        monitor: 2
+        monitor: 3
         assigns:
           - class: "^Slack$"
       - name: zoom
@@ -44,6 +49,9 @@ modes:
       - name: "2:ent"
         bindsym: 2
         monitor: 2
+      - name: "3:ent"
+        bindsym: 3
+        monitor: 3
       - name: "music"
         bindsym: m
         monitor: 2
@@ -51,7 +59,7 @@ modes:
           - class: "^Spotify$"
       - name: "steam"
         bindsym: s
-        monitor: 2
+        monitor: 1
         assigns:
           - class: "^Steam$"
       - name: "gaming"
