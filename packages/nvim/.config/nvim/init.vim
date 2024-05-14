@@ -9,6 +9,8 @@
 set number
 
 " === Color Columns ===
+" Set column color
+highlight ColorColumn ctermbg=darkgray guibg=darkgray
 " Show column at 81 and 121 to align for general 80 and 120 character line limits
 set colorcolumn=81,121
 " Use suggested message sizes for Git commit messages of 50 for titles and 72
