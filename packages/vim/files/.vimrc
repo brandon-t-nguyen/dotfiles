@@ -1,46 +1,62 @@
+" === Misc === "
+
 set mouse=a
 syntax on
-"set nowrap
 
-"Enable line numbers
+" Enable line numbers
 set number
 
-"Enable indentation keeping
+" Enable indentation keeping
 set autoindent
 
-"enable X11 clipboard
+" Enable X11 clipboard
 set clipboard=unnamedplus
 
-"show status line w/ file number
+" Show status line w/ file number
 set ls=2
 
-"show commands being entered
+" Show commands being entered
 set showcmd
 
-"show marker at column 81
-"autocmd FileType c,cpp,h set colorcolumn=81,121
+" === Color Columns ===
+" Set column color
+highlight ColorColumn ctermbg=darkgray guibg=darkgray
+" Show column at 81 and 121 to align for general 80 and 120 character line limits
 set colorcolumn=81,121
-
+" Use suggested message sizes for Git commit messages of 50 for titles and 72
+" for messages
 autocmd FileType gitcommit set colorcolumn=51,73
 
-"four space tabs 
-set tabstop=4
-set shiftwidth=4
-"set softtabstop=4
+" === Tabs ===
+function SetTabWidth(width)
+    let &tabstop = a:width
+    let &shiftwidth = a:width
+endfunction
 
-"tabs use space characters
+" 4-space tabs as default
+call SetTabWidth(4)
+
+" Insert spaces for tab
 set expandtab
-"but makefiles need tab
+" ...except for Makefiles which need tab characters
 autocmd FileType mk,make set noexpandtab
 
-"flag trailing whitespace for all files
-match Error /\s\+$/
+" Alternate tab widths
+autocmd FileType markdown,yaml,tex call SetTabWidth(2)
 
-"...and clean it automagically on write (for some filetypes)
-autocmd FileType c,cpp,h,java,verilog,systemverilog autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
+" === Trailing whitespace ===
+" Flag trailing whitespace for all files
+highlight TrailingWhitespace ctermbg=red guibg=red
+match TrailingWhitespace /\s\+$/
 
-"set alt tab width for certain filetypes
-autocmd FileType markdown,yaml,tex set tabstop=2 | set shiftwidth=2
+" Function to delete trailing whitespace
+function StripTrailingWhitespace()
+    %s/\s\+$//e
+endfunction
 
-"Local configuration
+" For *certain* filetypes, automatically get rid of trailing whitespace
+autocmd FileType c,cpp,h,java,verilog,systemverilog autocmd BufWritePre * call StripTrailingWhitespace()
+
+" === Local ===
+" Local configuration
 source $HOME/.local.vimrc
