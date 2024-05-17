@@ -16,7 +16,7 @@ prompt brng cvs signal
 
 # ls colors
 alias ls='ls --color=auto'
-if (( $+commands[dircolors] )); then
+if (( $+commands[dircolors] )) && [ -f $HOME/.dircolors ]; then
     eval $(dircolors $HOME/.dircolors)
 fi
 
