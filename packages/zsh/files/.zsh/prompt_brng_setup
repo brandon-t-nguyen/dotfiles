@@ -28,7 +28,7 @@ git_prompt ()
         fi
 
         # branch check
-        local branch=$(echo "$git_status" | grep 'branch.head' | sed 's/# branch.head\s*\(.*\)/\1/')
+        local branch=$(echo "$git_status" | grep 'branch.head' | sed -E 's/# branch.head[[:space:]]*(.*)/\1/')
         if [[ "$branch" == '(detached)' ]]; then
         # local branch=$(git branch --show-current)
         # if [[ -z "$branch" ]]; then
@@ -38,9 +38,9 @@ git_prompt ()
         fi
 
         # upstream check
-        local ab=$(echo "$git_status" | grep 'branch\.ab' | sed 's/.*\(+[0-9]\+ -[0-9]\+\).*/\1/')
-        local ahead=$(echo "$ab" | sed 's/.*+\([0-9]\+\).*/\1/')
-        local behind=$(echo "$ab" | sed 's/.*-\([0-9]\+\).*/\1/')
+        local ab=$(echo "$git_status" | grep 'branch\.ab' | sed -E 's/.*(\+[0-9]+ -[0-9]+).*/\1/')
+        local ahead=$(echo "$ab" | sed -E 's/.*\+([0-9]+).*/\1/')
+        local behind=$(echo "$ab" | sed -E 's/.*-([0-9]+).*/\1/')
 
         if [[ "$ahead" -gt 0 && "$behind" -gt 0 ]]; then
             prompt+=" %F{cyan}↑$ahead%f%F{yellow}↓$behind%f"
