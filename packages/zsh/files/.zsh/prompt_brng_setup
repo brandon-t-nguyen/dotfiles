@@ -1,3 +1,4 @@
+#!/bin/zsh
 prompt_brng_help ()
 {
 }
