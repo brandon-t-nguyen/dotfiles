@@ -16,7 +16,9 @@ prompt brng cvs signal
 
 # ls colors
 alias ls='ls --color=auto'
-eval $(dircolors $HOME/.dircolors)
+if (( $+commands[dircolors] )); then
+    eval $(dircolors $HOME/.dircolors)
+fi
 
 # Syntax highlighting
 if [ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
