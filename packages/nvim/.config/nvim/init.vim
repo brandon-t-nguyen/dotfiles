@@ -7,6 +7,9 @@
 " === Misc ===
 " Enable line numbers
 set number
+" Use clipboard for everything
+set clipboard+=unnamedplus
+
 
 " === Color Columns ===
 " Set column color
