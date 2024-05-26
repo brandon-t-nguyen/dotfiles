@@ -10,7 +10,10 @@ set number
 " Use clipboard for everything
 set clipboard+=unnamedplus
 " Set initial color scheme (must go before custom column colors)
-colorscheme vim
+try
+    colorscheme vim
+catch
+endtry
 
 
 " === Format Options ===
