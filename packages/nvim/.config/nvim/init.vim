@@ -11,6 +11,13 @@ set number
 set clipboard+=unnamedplus
 
 
+" === Format Options ===
+" https://vi.stackexchange.com/questions/1983/how-can-i-get-vim-to-stop-putting-comments-in-front-of-new-lines/1985#1985
+" Disable automatic comments on new lines (default in the filetypes...)
+" I don't know if I like this or not yet...
+"autocmd FileType * set formatoptions-=r
+
+
 " === Color Columns ===
 " Set column color
 highlight ColorColumn ctermbg=darkgray guibg=darkgray
