@@ -1,0 +1,40 @@
+#!/bin/bash
+
+i3dir="$target/.config/i3"
+echo $i3dir
+
+# stow our files and create a new local i3 config file
+$stow files
+touch "$i3dir/local.config"
+
+# generate the workspaces file
+make -C "$i3dir"
+
+# generate the main file
+# has to be done locally since monitor variables need to be created at
+# the top level for the other files to see them
+echo '# Mod keys' > "$i3dir/config"
+echo 'set $mod Mod1' >> "$i3dir/config"
+echo 'set $sup Mod4' >> "$i3dir/config"
+echo >> "$i3dir/config"
+
+# generate default monitors
+if ! [ -f "$monitors_path" ]; then
+    # use xrandr to enumerate and provide a sample set of monitors
+    monitors=$(xrandr --query | grep '\<connected' | awk '{print $1}')
+    n=1
+    echo "# Monitors" >> "$i3dir/config"
+    for mon in $monitors; do
+        echo "set \$mon$n $mon" >> "$i3dir/config"
+        n=$((n+1))
+    done
+fi
+echo >> "$i3dir/config"
+
+# include the files
+includes="control workspaces theme bar local startup"
+for inc in $includes; do
+    echo "include ~/.config/i3/$inc.config" >> "$i3dir/config"
+done
+
+echo "You may want to check and modify ~/.config/i3/config to set the monitor variables to your liking"
