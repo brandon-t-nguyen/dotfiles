@@ -61,7 +61,8 @@ modes:
         bindsym: s
         monitor: 1
         assigns:
-          - class: "^Steam$"
+          - class: "^steam(webhelper)?$"
+            title: "Steam"
       - name: "gaming"
         bindsym: g
         monitor: 1
